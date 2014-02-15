@@ -1,17 +1,20 @@
 package main
 
-import (
-	"encoding/json"
-	"log"
-	"net/http"
-	"os"
+import "encoding/json"
+import "net/http"
+import "log"
+import "os"
 
-	"github.com/gorilla/mux"
-)
+import "github.com/gorilla/mux"
 
 func router() *mux.Router {
 	router := mux.NewRouter()
 	router.HandleFunc("/", IndexHandler).Methods("GET")
+	router.HandleFunc("/games", GamesHandler)
+	router.HandleFunc("/players", PlayersHandler)
+	router.HandleFunc("/games/{gameId}", GameHandler)
+	router.HandleFunc("/games/{gameId}/moves", MovesHandler)
+	router.HandleFunc("/games/{gameId}/moves/{moveId}", MoveHandler)
 	return router
 }
 
@@ -25,6 +28,21 @@ func IndexHandler(res http.ResponseWriter, req *http.Request) {
 	data, _ := json.Marshal("{'hello':'wercker!'}")
 	res.Header().Set("Content-Type", "application/json; charset=utf-8")
 	res.Write(data)
+}
+
+func GamesHandler(res http.ResponseWriter, req *http.Request) {
+}
+
+func GameHandler(res http.ResponseWriter, req *http.Request) {
+}
+
+func PlayersHandler(res http.ResponseWriter, req *http.Request) {
+}
+
+func MovesHandler(res http.ResponseWriter, req *http.Request) {
+}
+
+func MoveHandler(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
