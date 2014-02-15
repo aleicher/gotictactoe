@@ -15,4 +15,3 @@ http://devcenter.wercker.com/articles/languages/go/deploying-go-apps-to-heroku.h
 http://blog.wercker.com/2013/08/07/building-an-api-with-golang-rethinkdb-wercker.html
 
 
-#### 
