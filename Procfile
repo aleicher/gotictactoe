@@ -1,1 +1,1 @@
-web ./gottt -port 
+web: gotictactoe
